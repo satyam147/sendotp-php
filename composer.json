@@ -1,9 +1,9 @@
 {
-    "name": "sendotp/sendotp",
+    "name": "satyam147/sendotp",
     "authors": [
         {
-            "name": "Rahul Chordiya",
-            "email": "rahul@walkover.in"
+            "name": "Satyam Dasari",
+            "email": "satyam161211149@gmail.com"
         }
     ],
     "autoload": {
