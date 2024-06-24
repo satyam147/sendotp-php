@@ -1,5 +1,6 @@
 {
     "name": "satyam147/sendotp",
+    "license": "MIT",
     "authors": [
         {
             "name": "Satyam Dasari",
@@ -11,5 +12,6 @@
             "sendotp\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "require": {}
 }
