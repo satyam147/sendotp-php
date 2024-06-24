@@ -37,7 +37,7 @@ class sendotp
      * @param {string, optional} otp
      * Return promise if no callback is passed and promises available
      */
-    public function send($contactNumber, $senderId, $otp=null) {
+    public function send($contactNumber, $senderId, $templateId, $otp=null) {
 
         if (!isset($otp) || strlen($otp)<3 || strlen($otp)>11) {
             $otp = $this->generateOtp();
@@ -48,6 +48,7 @@ class sendotp
         $requestArgs["sender"]=$senderId;
         $requestArgs["message"]=str_replace('{{otp}}', $otp, $this->messageTemplate);
         $requestArgs["otp"]=$otp;
+        $requestArgs["template_id"]=$templateId;
         $this->message=$requestArgs["message"];
         $response  = $this->call("sendotp.php", $requestArgs);
         if($response["type"]=="success"){
