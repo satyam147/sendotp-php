@@ -8,7 +8,24 @@
         "sendotp-php",
         "sendotp-php-sdk",
         "sendotp-laravel",
-        "sendotp-laravel-sdk"
+        "sendotp-laravel-sdk",
+        "sendotp-laravel-package",
+        "sendotp-php-package",
+        "sendotp-php-sdk-package",
+        "message91",
+        "message91-sendotp",
+        "message91-sendotp-php",
+        "message91-sendotp-php-sdk",
+        "message91-sendotp-laravel",
+        "message91-sendotp-laravel-sdk",
+        "message91-sendotp-laravel-package",
+        "msg91",
+        "msg91-sendotp",
+        "msg91-sendotp-php",
+        "msg91-sendotp-php-sdk",
+        "msg91-sendotp-laravel",
+        "msg91-sendotp-laravel-sdk",
+        "msg91-sendotp-laravel-package"
     ],
     "autoload": {
         "psr-0": {
