@@ -1,6 +1,8 @@
 {
     "name": "satyam147/sendotp",
     "license": "MIT",
+    "description": "SendOTP is a composer package for Message91's SendOTP API to use in Laravel and PHP applications.",
+    "keywords": ["sendotp", "sendotp-php", "sendotp-php-sdk", "sendotp-laravel", "sendotp-laravel-sdk"],
     "authors": [
         {
             "name": "Satyam Dasari",
