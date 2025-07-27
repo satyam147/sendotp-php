@@ -114,7 +114,11 @@ class sendotp
      */
     public static function actionUrlBuild($action)
     {
-        return static::getBaseUrl() . '/api/' . $action;
+        $api = '/api/';
+        if (str_contains($action, 'v5')) {
+            $api = 'api/';
+        }
+        return static::getBaseUrl() . $api . $action;
     }
 
     /**
@@ -128,13 +132,13 @@ class sendotp
     public function call(string $action, $args)
     {
         $callback = [];
-
         $httpInstance = new HttpInstance(static::actionUrlBuild($action));
         if(str_contains($action, 'v5')){
             $httpInstance->setHeaders([
                 'authkey' => $this->key,
             ]);
         }
+
         $httpInstance->setParameters($args);
 
         try {
