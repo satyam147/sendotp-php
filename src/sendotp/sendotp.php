@@ -130,7 +130,7 @@ class sendotp
         $callback = [];
 
         $httpInstance = new HttpInstance(static::actionUrlBuild($action));
-        if($action->contains('v5')){
+        if($action->includes('v5')){
             $httpInstance->setHeaders([
                 'authkey' => $this->key,
             ]);
