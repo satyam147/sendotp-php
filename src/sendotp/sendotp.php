@@ -125,12 +125,12 @@ class sendotp
      * @param $args {Arguments to send to the block (JSON)}
      * @return mixed|string
      */
-    public function call($action, $args)
+    public function call(string $action, $args)
     {
         $callback = [];
 
         $httpInstance = new HttpInstance(static::actionUrlBuild($action));
-        if($action->includes('v5')){
+        if(str_contains($action, 'v5')){
             $httpInstance->setHeaders([
                 'authkey' => $this->key,
             ]);
