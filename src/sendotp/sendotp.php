@@ -86,11 +86,9 @@ class sendotp
     * Return promise if no callback is passed and promises available
     */
    public function verify($contactNumber, $otp) {
-
-     $requestArgs["authkey"]=$this->key;
      $requestArgs["mobile"]=$contactNumber;
      $requestArgs["otp"]=$otp;
-     $response  = $this->call("verifyRequestOTP.php", $requestArgs);
+     $response  = $this->call("v5/otp/verify", $requestArgs);
      return $response;
 
       //  return SendOtp.doRequest('get', "verifyRequestOTP.php", args, callback);
@@ -132,7 +130,11 @@ class sendotp
         $callback = [];
 
         $httpInstance = new HttpInstance(static::actionUrlBuild($action));
-
+        if($action->contains('v5')){
+            $httpInstance->setHeaders([
+                'authkey' => $this->key,
+            ]);
+        }
         $httpInstance->setParameters($args);
 
         try {

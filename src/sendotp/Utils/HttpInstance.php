@@ -103,4 +103,19 @@ class HttpInstance
         return $this->httpCode;
     }
 
+    /**
+     * Set headers for the request
+     *
+     * @param $headers
+     */
+    public function setHeaders($headers)
+    {
+        $headerArray = [];
+        foreach ($headers as $key => $value) {
+            $headerArray[] = $key . ': ' . $value;
+        }
+
+        curl_setopt($this->curlInstance, CURLOPT_HTTPHEADER, $headerArray);
+    }
+
 }
